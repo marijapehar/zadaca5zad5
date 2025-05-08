@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Objekti u JavaScriptu</title>
+</head>
+<body>
+  <h2>Podaci o osobama:</h2>
+  <div id="output"></div>
+
+  <script>
+    const osoba1 = { firstName: "Marko", lastName: "Marić", age: 40, eyeColor: "crna" };
+    const osoba2 = { firstName: "Ivana", lastName: "Ivić", age: 28, eyeColor: "plava" };
+    const osoba3 = { firstName: "Petar", lastName: "Perić", age: 35, eyeColor: "zelena" };
+    const osoba4 = { firstName: "Ana", lastName: "Anić", age: 22, eyeColor: "smeđa" };
+
+    const osobe = [osoba1, osoba2, osoba3, osoba4];
+    const output = document.getElementById("output");
+
+    for (let i = 0; i < osobe.length; i++) {
+      const osoba = osobe[i];
+      const osobaDiv = document.createElement("div");
+      osobaDiv.innerHTML = `<b>Osoba ${i + 1}:</b> 
+        Ime: ${osoba.firstName}, 
+        Prezime: ${osoba.lastName}, 
+        Godine: ${osoba.age}, 
+        Boja očiju: ${osoba.eyeColor}<br>`;
+      output.appendChild(osobaDiv);
+    }
+  </script>
+</body>
+</html>
